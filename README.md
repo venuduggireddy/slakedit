@@ -122,7 +122,7 @@ UI ->> API Gateway: Get client details
 API Gateway->>System Accounts API: PUT /api/system-account-passwords/forgot/{uid}
 System Accounts API ->> SystemAccountService:  
 SystemAccountService -->> SystemAccountService: Validate OTP
-SystemAccountService ->> Okta REST API: POST /{realm}/clients/{id}
+SystemAccountService ->> Okta REST API: POST {{clientId}}/lifecycle/newSecret
 Note right of SystemAccountService : {id} is the uuid that <br/>Keycloak generates <br/>when creating client
 Okta REST API -->> SystemAccountService: 
 SystemAccountService -->> System Accounts API: 
@@ -191,6 +191,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4MTY5OTczOSwxMjk4NzI0Njk5LC0xND
-U5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbMTk2NzAzNTI4LDEyOTg3MjQ2OTksLTE0NT
+kzNDAwNzRdfQ==
 -->
