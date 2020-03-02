@@ -41,7 +41,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	--header 'Authorization: SSWS {{API_KEY}}' \
 	--data-raw ''
 	 ```
- - [x] ~~Get client secret~~  Okta does not provide this functionality
+ - [x] ~~Get client secret~~  Okta does not provide this functionality using API. However we can view the secret from the Okta dashboard.
 
  - [x] Test client authorization using secret and client ID
 	 ```
@@ -179,10 +179,11 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzI2NzA1NSwxNDEyMTAyMDI3LDQyND
-U4MjM0OSwtMTk5MzIyOTIyNiw1NzU4ODMwNzEsMTk4MjE2MTYx
-OSwxMjQ3MTk0MTUsMTAxMzY4NzU5OCwtMzk3MDQ3MjQzLC0xOT
-Q4NTc2NzU5LDc4MjA4MjYzNywtMTU0NjQyMzQ3MCwxMjg2NTYw
-NDU0LC0xMzgwNDMyOTcyLDIxMjUyODM4NjIsMTk2NzAzNTI4LD
-EyOTg3MjQ2OTksLTE0NTkzNDAwNzRdfQ==
+eyJoaXN0b3J5IjpbLTE5Nzc3MjYxMDUsLTE3MzI2NzA1NSwxND
+EyMTAyMDI3LDQyNDU4MjM0OSwtMTk5MzIyOTIyNiw1NzU4ODMw
+NzEsMTk4MjE2MTYxOSwxMjQ3MTk0MTUsMTAxMzY4NzU5OCwtMz
+k3MDQ3MjQzLC0xOTQ4NTc2NzU5LDc4MjA4MjYzNywtMTU0NjQy
+MzQ3MCwxMjg2NTYwNDU0LC0xMzgwNDMyOTcyLDIxMjUyODM4Nj
+IsMTk2NzAzNTI4LDEyOTg3MjQ2OTksLTE0NTkzNDAwNzRdfQ==
+
 -->
