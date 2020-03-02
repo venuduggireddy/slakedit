@@ -129,7 +129,7 @@ System Accounts API -->> API Gateway: Success {CwsApplication}
 API Gateway -->> UI: Success {CwsApplication}
 ```
 
-#### Authenticate  System Accounts client using Keycloak REST API
+#### Authenticate  System Accounts client using Okat REST API
 ```mermaid
 sequenceDiagram
 SOAP ->> API Gateway: Authenticate client
@@ -190,6 +190,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyNTI4Mzg2MiwxOTY3MDM1MjgsMTI5OD
-cyNDY5OSwtMTQ1OTM0MDA3NF19
+eyJoaXN0b3J5IjpbLTkzMDIxNzgzMiwyMTI1MjgzODYyLDE5Nj
+cwMzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
 -->
