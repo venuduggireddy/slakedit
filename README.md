@@ -7,25 +7,27 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
  - [x] Create a API token and make a note of the token as it will be the only time that we will be able to view and save.  This API token needs to be passed as an Authorization header for all Okta REST API calls
  
  - [x] Create new **service** client with `grant_type: client_credentials` and `token_endpoint_auth_method: client_secret_post`  using REST API. The response will have `client_id` and `client_secret`. The `client_secret` is shown only on the response of the creation and cannot to retrieved using the API
- ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* This will create a new Application in Okta and can be viewed from the dashaboard 
- ```
-curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---header 'Authorization: SSWS {{OKTA_API_KEY}}' \
---data-raw '  {
-    "client_name": "batasam",
-    "redirect_uris": [],
-    "response_types": [
-      "token"
-    ],
-    "grant_types": [
-      "client_credentials"
-    ],
-    "token_endpoint_auth_method": "client_secret_post",
-    "application_type": "service"
-  }'
- ```
+ 
+	 ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* This will create a new Application in Okta and can be viewed from the dashboard including the client_id and client_secret 
+	 
+	 ```
+	curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients' \
+	--header 'Accept: application/json' \
+	--header 'Content-Type: application/json' \
+	--header 'Authorization: SSWS {{OKTA_API_KEY}}' \
+	--data-raw '  {
+	    "client_name": "batasam",
+	    "redirect_uris": [],
+	    "response_types": [
+	      "token"
+	    ],
+	    "grant_types": [
+	      "client_credentials"
+	    ],
+	    "token_endpoint_auth_method": "client_secret_post",
+	    "application_type": "service"
+	  }'
+	 ```
  - [x] Update/Reset client secret using REST API
  ```
 curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients/{{client_id}}/lifecycle/newSecret' \
@@ -174,7 +176,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTM3MDQ1OCwxMjg2NTYwNDU0LC0xMz
-gwNDMyOTcyLDIxMjUyODM4NjIsMTk2NzAzNTI4LDEyOTg3MjQ2
-OTksLTE0NTkzNDAwNzRdfQ==
+eyJoaXN0b3J5IjpbMTQ4MDM3Mzc5LDEyODY1NjA0NTQsLTEzOD
+A0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3MDM1MjgsMTI5ODcyNDY5
+OSwtMTQ1OTM0MDA3NF19
 -->
