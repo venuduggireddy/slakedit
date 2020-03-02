@@ -82,7 +82,7 @@ curl --location --request POST '{{OKTA_URL}}/oauth2/{{AUTH_SERVER}}/v1/token' \
 
 ### UML diagrams
 
-####   Create new System Accounts client using keycloak REST API
+####   Create new System Accounts client using Okta REST API
 GSA Security Approver approves a pending request than a new system accounts client will be created in keycloak.
 
 ```mermaid
@@ -90,7 +90,7 @@ sequenceDiagram
 UI ->> API Gateway: Approve System Account
 API Gateway->>CwsAppController: PUT /v1/applications/approve
 CwsAppController->> CWSAppService: approveApplication
-CWSAppService ->> Keycloak REST API: POST {realm}/clients
+CWSAppService ->> Okta REST API: POST {realm}/clients
 Note right of Keycloak REST API : Creates new client,<br/>generates secret<br/> and stores in <br/> keycloak database
 Keycloak REST API -->> CWSAppService : Success 200 OK
 CWSAppService ->> CwsRepo: Update Status, Save the & Save to DB 
@@ -191,5 +191,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF19
+eyJoaXN0b3J5IjpbLTEwNTg3MzcxNzMsMTI5ODcyNDY5OSwtMT
+Q1OTM0MDA3NF19
 -->
