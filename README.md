@@ -90,9 +90,9 @@ sequenceDiagram
 UI ->> API Gateway: Approve System Account
 API Gateway->>CwsAppController: PUT /v1/applications/approve
 CwsAppController->> CWSAppService: approveApplication
-CWSAppService ->> Okta REST API: POST {realm}/clients
-Note right of Keycloak REST API : Creates new client,<br/>generates secret<br/> and stores in <br/> keycloak database
-Keycloak REST API -->> CWSAppService : Success 200 OK
+CWSAppService ->> Okta REST API: POST oauth2/v1/clients
+Note right of Okta REST API: Creates new client,<br/>generates secret<br/> and stores in <br/> keycloak database
+Okta REST API -->> CWSAppService : Success 200 OK
 CWSAppService ->> CwsRepo: Update Status, Save the & Save to DB 
 CwsRepo -->> CWSAppService: CwsApplication
 CWSAppService -->> CwsAppController: CwsApplication
@@ -105,7 +105,7 @@ sequenceDiagram
 UI ->> API Gateway: Get client details
 API Gateway->>System Accounts API: GET /system-accounts/{id}
 System Accounts API ->> CwsAppService:  getApplication(:id)
-Note right of CwsAppService: Do not need to go to <br/>Keycloak for details
+Note right of CwsAppService: Do not need to go to <br/>Okta for details
 CwsAppService ->> CwsRepo: findById(:id)
 CwsRepo->> CwsAppService : CwsApplication
 CwsAppService -->> System Accounts API: CwsApplication
@@ -122,9 +122,9 @@ UI ->> API Gateway: Get client details
 API Gateway->>System Accounts API: PUT /api/system-account-passwords/forgot/{uid}
 System Accounts API ->> SystemAccountService:  
 SystemAccountService -->> SystemAccountService: Validate OTP
-SystemAccountService ->> Keycloak REST API: POST /{realm}/clients/{id}
+SystemAccountService ->> Okta REST API: POST /{realm}/clients/{id}
 Note right of SystemAccountService : {id} is the uuid that <br/>Keycloak generates <br/>when creating client
-Keycloak REST API -->> SystemAccountService: 
+Okta REST API -->> SystemAccountService: 
 SystemAccountService -->> System Accounts API: 
 System Accounts API -->> API Gateway: Success {CwsApplication}
 API Gateway -->> UI: Success {CwsApplication}
@@ -191,6 +191,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTg3MzcxNzMsMTI5ODcyNDY5OSwtMT
-Q1OTM0MDA3NF19
+eyJoaXN0b3J5IjpbLTc4MTY5OTczOSwxMjk4NzI0Njk5LC0xND
+U5MzQwMDc0XX0=
 -->
