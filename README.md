@@ -53,7 +53,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	--data-urlencode 'client_id={{CLIENT_ID}}' \
 	--data-urlencode 'client_secret={{CLIENT_SECRET}}'
 	 ```
-- [x] Analyze changes needed for  System Accounts API to integrate with Okta. Refactor following java classes and update the application.properites  file with Okat Authorization server & Token details
+- [x] Analyze changes needed for  System Accounts API to integrate with Okta. Refactor following java classes and update the application.properites  file with Okta Authorization server & Token details
 	 - SystemAccountRestController.java
 	 - SFAController.java
 	 - SystemAccountService.java
@@ -179,10 +179,10 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMjEwMjAyNyw0MjQ1ODIzNDksLTE5OT
-MyMjkyMjYsNTc1ODgzMDcxLDE5ODIxNjE2MTksMTI0NzE5NDE1
-LDEwMTM2ODc1OTgsLTM5NzA0NzI0MywtMTk0ODU3Njc1OSw3OD
-IwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMTM4MDQz
-Mjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0Njk5LC
-0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbLTE3MzI2NzA1NSwxNDEyMTAyMDI3LDQyND
+U4MjM0OSwtMTk5MzIyOTIyNiw1NzU4ODMwNzEsMTk4MjE2MTYx
+OSwxMjQ3MTk0MTUsMTAxMzY4NzU5OCwtMzk3MDQ3MjQzLC0xOT
+Q4NTc2NzU5LDc4MjA4MjYzNywtMTU0NjQyMzQ3MCwxMjg2NTYw
+NDU0LC0xMzgwNDMyOTcyLDIxMjUyODM4NjIsMTk2NzAzNTI4LD
+EyOTg3MjQ2OTksLTE0NTkzNDAwNzRdfQ==
 -->
