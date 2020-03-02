@@ -62,18 +62,6 @@ curl --location --request POST '{{OKTA_URL}}/oauth2/{{AUTH_SERVER}}/v1/token' \
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 
 ### UML diagrams
 
@@ -185,7 +173,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NjU2MDQ1NCwtMTM4MDQzMjk3MiwyMT
-I1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQw
-MDc0XX0=
+eyJoaXN0b3J5IjpbLTUxMDk1NTE5NSwxMjg2NTYwNDU0LC0xMz
+gwNDMyOTcyLDIxMjUyODM4NjIsMTk2NzAzNTI4LDEyOTg3MjQ2
+OTksLTE0NTkzNDAwNzRdfQ==
 -->
