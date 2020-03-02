@@ -4,11 +4,12 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 
  - [x] Create a new developer account at [developer.okta.com](https://developer.okta.com/). After login Okta provides a pre-configured custom Authorization Server with the name `default`
  
- - [x]  Create a new `scope`. Scopes specify what access privileges are being requested as part of the authorization. Do not set it as default scope and force the user to specify the scope on the authorization request 
- 
- - [x] Create a API token and make a note of the token as it will be the only time that can be viewed.  This API token needs to be passed as an Authorization header for all Okta REST API calls
+  - [x] Create a API token and make a note of the token as it will be the only time that can be viewed.  This API token needs to be passed as an Authorization header for all Okta REST API calls
  
 	 ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* API Token expires every 30 days
+ - [x]  Create a new `scope`. Scopes specify what access privileges are being requested as part of the authorization. Do not set it as default scope and force the user to specify the scope on the authorization request 
+ 
+
  
  - [x] Create new **service** client with `grant_type: client_credentials` and `token_endpoint_auth_method: client_secret_post`  using REST API. The response will have `client_id` and `client_secret`. The `client_secret` is shown only on the response of the creation and cannot be retrieved later using the API
  
@@ -18,7 +19,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients' \
 	--header 'Accept: application/json' \
 	--header 'Content-Type: application/json' \
-	--header 'Authorization: SSWS {{OKTA_API_KEY}}' \
+	--header 'Authorization: SSWS {{API_KEY}}' \
 	--data-raw '  {
 	    "client_name": "batasam",
 	    "redirect_uris": [],
@@ -38,7 +39,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients/{{client_id}}/lifecycle/newSecret' \
 	--header 'Accept: application/json' \
 	--header 'Content-Type: application/json' \
-	--header 'Authorization: SSWS {{OKTA_API_KEY}}' \
+	--header 'Authorization: SSWS {{API_KEY}}' \
 	--data-raw ''
 	 ```
  - [x] ~~Get client secret~~  Okta does not provide this functionality
@@ -177,7 +178,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ5ODE4NjU1LDEwMTM2ODc1OTgsLTM5Nz
+eyJoaXN0b3J5IjpbNDk4MDg0MDg5LDEwMTM2ODc1OTgsLTM5Nz
 A0NzI0MywtMTk0ODU3Njc1OSw3ODIwODI2MzcsLTE1NDY0MjM0
 NzAsMTI4NjU2MDQ1NCwtMTM4MDQzMjk3MiwyMTI1MjgzODYyLD
 E5NjcwMzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
