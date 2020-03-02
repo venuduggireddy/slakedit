@@ -186,3 +186,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 4. Based on the POC requirements, we assume that only SOAP services will need to change to pass a client secret in the Auth header by the clients. Working with client teams for them to make these changes on their side is not part of the scope of this POC. This will be accounted for in the actual implementation once Keycloak is approved.
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once Keycloak is approved.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzAzODc1Njc3XX0=
+-->
