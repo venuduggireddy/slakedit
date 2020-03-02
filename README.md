@@ -141,7 +141,9 @@ API Gateway -->> SOAP: Success {CwsApplication, AUTH}
 #### Dependencies
 
  1. Infrastructure team to provide okta instance for both lower and higher environments
- 2. Have to run one time migration job to transfer all system accounts user to Okta. This will generate `client_id` and  `client_secret` for the existing users. This `client_secret` has to shared with the existing clients which is required for authentication  
+
+#### Migration of existing users
+ Have to run one time migration job to transfer all system accounts user to Okta. This will generate `client_id` and  `client_secret` for the existing users. This `client_secret` has to shared with the existing clients which is required for authentication  
 
 #### Questions: 
 Below are some questions that were answered by **Ruchir Mehta** and team
@@ -177,9 +179,9 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MjE2MTYxOSwxMjQ3MTk0MTUsMTAxMz
-Y4NzU5OCwtMzk3MDQ3MjQzLC0xOTQ4NTc2NzU5LDc4MjA4MjYz
-NywtMTU0NjQyMzQ3MCwxMjg2NTYwNDU0LC0xMzgwNDMyOTcyLD
-IxMjUyODM4NjIsMTk2NzAzNTI4LDEyOTg3MjQ2OTksLTE0NTkz
-NDAwNzRdfQ==
+eyJoaXN0b3J5IjpbNzU3NTgyNTE5LDE5ODIxNjE2MTksMTI0Nz
+E5NDE1LDEwMTM2ODc1OTgsLTM5NzA0NzI0MywtMTk0ODU3Njc1
+OSw3ODIwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMT
+M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
+Njk5LC0xNDU5MzQwMDc0XX0=
 -->
