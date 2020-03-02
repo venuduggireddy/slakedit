@@ -6,11 +6,10 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
  
   - [x] Create a API token and make a note of the token as it will be the only time that can be viewed.  This API token needs to be passed as an Authorization header for all Okta REST API calls
  
-	 ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* API Token expires every 30 days
+	 ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* API Token expires every 30 days by default 
+	 
  - [x]  Create a new `scope`. Scopes specify what access privileges are being requested as part of the authorization. Do not set it as default scope and force the user to specify the scope on the authorization request 
- 
-
- 
+  
  - [x] Create new **service** client with `grant_type: client_credentials` and `token_endpoint_auth_method: client_secret_post`  using REST API. The response will have `client_id` and `client_secret`. The `client_secret` is shown only on the response of the creation and cannot be retrieved later using the API
  
 	 ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* This will create a new Application in Okta and can be viewed from the dashboard including `client_id` and `client_secret` 
@@ -178,8 +177,9 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDk4MDg0MDg5LDEwMTM2ODc1OTgsLTM5Nz
-A0NzI0MywtMTk0ODU3Njc1OSw3ODIwODI2MzcsLTE1NDY0MjM0
-NzAsMTI4NjU2MDQ1NCwtMTM4MDQzMjk3MiwyMTI1MjgzODYyLD
-E5NjcwMzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbLTIwNTcyNTU1MTcsMTAxMzY4NzU5OCwtMz
+k3MDQ3MjQzLC0xOTQ4NTc2NzU5LDc4MjA4MjYzNywtMTU0NjQy
+MzQ3MCwxMjg2NTYwNDU0LC0xMzgwNDMyOTcyLDIxMjUyODM4Nj
+IsMTk2NzAzNTI4LDEyOTg3MjQ2OTksLTE0NTkzNDAwNzRdfQ==
+
 -->
