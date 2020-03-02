@@ -4,7 +4,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 
  - [x] Create a new developer account at [developer.okta.com](https://developer.okta.com/). After login Okta provides a pre-configured custom Authorization Server with the name `default`
  
- - [x] Create a API token and make a note of the token as it will be the only time that we will be able to view and save.  This API token needs to be passed as an Authorization header for all Okta REST API calls
+ - [x] Create a API token and make a note of the token as it will be the only time that can be viewed.  This API token needs to be passed as an Authorization header for all Okta REST API calls
  
 	 ![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* API Token expires every 30 days
  
@@ -175,8 +175,8 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDg1NzY3NTksNzgyMDgyNjM3LC0xNT
-Q2NDIzNDcwLDEyODY1NjA0NTQsLTEzODA0MzI5NzIsMjEyNTI4
-Mzg2MiwxOTY3MDM1MjgsMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF
-19
+eyJoaXN0b3J5IjpbMTM0OTMzMDg0OSwtMTk0ODU3Njc1OSw3OD
+IwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMTM4MDQz
+Mjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0Njk5LC
+0xNDU5MzQwMDc0XX0=
 -->
