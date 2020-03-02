@@ -83,8 +83,7 @@ curl --location --request POST '{{OKTA_URL}}/oauth2/{{AUTH_SERVER}}/v1/token' \
 ### UML diagrams
 
 ####   Create new System Accounts client using Okta REST API
-New system accounts client is created GSA Security Approver approves a pending request than a new system accounts client will be created in Okta.
-
+New system accounts client is created when `GSA Security Approver` approves a pending request
 ```mermaid
 sequenceDiagram
 UI ->> API Gateway: Approve System Account
@@ -191,6 +190,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNDU2MDU4MywxOTY3MDM1MjgsMTI5OD
+eyJoaXN0b3J5IjpbMjEyNTI4Mzg2MiwxOTY3MDM1MjgsMTI5OD
 cyNDY5OSwtMTQ1OTM0MDA3NF19
 -->
