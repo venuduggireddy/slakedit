@@ -117,6 +117,7 @@ API Gateway -->> UI: Success {CwsApplication}
 ```
 
 #### Authenticate  System Accounts client using Okta REST API
+Request an access token using the Client Credentials grant flow,
 ```mermaid
 sequenceDiagram
 SOAP ->> API Gateway: Authenticate client
@@ -132,9 +133,6 @@ SystemAccountService -->> SFAController: {CwsApplication, AUTH}
 SFAController -->> API Gateway: Success {CwsApplication, AUTH}
 API Gateway -->> SOAP: Success {CwsApplication, AUTH}
 ```
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 
@@ -177,7 +175,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMT
-M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
-Njk5LC0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbLTExMzQxNTEwNjYsLTE1NDY0MjM0NzAsMT
+I4NjU2MDQ1NCwtMTM4MDQzMjk3MiwyMTI1MjgzODYyLDE5Njcw
+MzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
 -->
