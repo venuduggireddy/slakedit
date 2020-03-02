@@ -111,7 +111,7 @@ API Gateway->>System Accounts API: PUT /api/system-account-passwords/forgot/{uid
 System Accounts API ->> SystemAccountService:  
 SystemAccountService -->> SystemAccountService: Validate OTP
 SystemAccountService ->> Okta REST API: POST {{clientId}}/lifecycle/newSecret
-Note right of SystemAccountService : {id} is the uuid that <br/>Okta generates <br/>when creating client
+Note right of SystemAccountService : {id} is the uuid that <br/>Okta generates <br/>when creating client<br/> and responses with new secret
 Okta REST API -->> SystemAccountService: 
 SystemAccountService -->> System Accounts API: 
 System Accounts API -->> API Gateway: Success {CwsApplication}
@@ -179,7 +179,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM5NjczMDc4LDE5ODIxNjE2MTksMTI0Nz
+eyJoaXN0b3J5IjpbMjM2MTY0MTU0LDE5ODIxNjE2MTksMTI0Nz
 E5NDE1LDEwMTM2ODc1OTgsLTM5NzA0NzI0MywtMTk0ODU3Njc1
 OSw3ODIwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMT
 M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
