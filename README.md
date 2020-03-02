@@ -2,7 +2,7 @@
 
 Objective is to migrate existing system accounts Okta IAM solution with *minimal*  impact to existing functionality. This migration is inline with future road map to utilize OAuth2 as authentication and authorization solution.  
 
- - [x] Create a new developer account at [developer.okta.com](https://developer.okta.com/). After login Okta provides a pre-configured Custom Authorization Server with the name `default`
+ - [x] Create a new developer account at [developer.okta.com](https://developer.okta.com/). After login Okta provides a pre-configured custom Authorization Server with the name `default`
  
  - [x] Create a API token and make a note of the token as it will be the only time that we will be able to view it.  This API token needs to be passed as an Authorization header for all Okta REST API calls
  
@@ -191,5 +191,5 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTkzNDAwNzRdfQ==
+eyJoaXN0b3J5IjpbNjExNTUyNTAyLC0xNDU5MzQwMDc0XX0=
 -->
