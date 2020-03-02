@@ -28,6 +28,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	    "application_type": "service"
 	  }'
 	 ```
+	 <br/>
  - [x] Update/Reset client secret using REST API
 	 ```
 	curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients/{{client_id}}/lifecycle/newSecret' \
@@ -175,7 +176,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTI3NDEzLC0xNTQ2NDIzNDcwLDEyOD
-Y1NjA0NTQsLTEzODA0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3MDM1
-MjgsMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF19
+eyJoaXN0b3J5IjpbLTEyNzkzMDY3NzgsLTE1NDY0MjM0NzAsMT
+I4NjU2MDQ1NCwtMTM4MDQzMjk3MiwyMTI1MjgzODYyLDE5Njcw
+MzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
 -->
