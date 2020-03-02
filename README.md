@@ -128,7 +128,7 @@ API Gateway->>SFAController: POST sfa/auth
 SFAController ->> SystemAccountService: getSystemAccount
 SystemAccountService ->> Okta REST API: POST /{{default}}/v1/token
 Okta REST API-->> SystemAccountService: Success 200 {{AUTH}}
-Note right of SystemAccountService: Returns access_token<br/>and refresh tocken<br/> details back to API
+Note right of SystemAccountService: Repsonse with access_token<br/> API
 SystemAccountService ->> CwsRepo: findById(:id)
 CwsRepo ->> SystemAccountService: CwsApplication
 SystemAccountService -->> SFAController: {CwsApplication, AUTH}
@@ -179,9 +179,9 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc1ODgzMDcxLDE5ODIxNjE2MTksMTI0Nz
-E5NDE1LDEwMTM2ODc1OTgsLTM5NzA0NzI0MywtMTk0ODU3Njc1
-OSw3ODIwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMT
-M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
-Njk5LC0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbMjA1MzY4MDY0LDU3NTg4MzA3MSwxOTgyMT
+YxNjE5LDEyNDcxOTQxNSwxMDEzNjg3NTk4LC0zOTcwNDcyNDMs
+LTE5NDg1NzY3NTksNzgyMDgyNjM3LC0xNTQ2NDIzNDcwLDEyOD
+Y1NjA0NTQsLTEzODA0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3MDM1
+MjgsMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF19
 -->
