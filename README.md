@@ -63,8 +63,7 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	 - review.component.ts
 	 - system-accounts-service.ts
 <br/>
-<br/>
-<br/>
+
 
 ### UML diagrams
 
@@ -85,6 +84,7 @@ CwsAppController -->> API Gateway: Success {CwsApplication}
 API Gateway -->> UI: Success {CwsApplication}
 ```
 ####   Get System Accounts client details
+Get system accounts client details from the DB without need to talk to O
 ```mermaid
 sequenceDiagram
 UI ->> API Gateway: Get client details
@@ -176,7 +176,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNzk0NTY0OSwxMjg2NTYwNDU0LC0xMz
-gwNDMyOTcyLDIxMjUyODM4NjIsMTk2NzAzNTI4LDEyOTg3MjQ2
-OTksLTE0NTkzNDAwNzRdfQ==
+eyJoaXN0b3J5IjpbLTEzNDU5ODU1MDUsMTI4NjU2MDQ1NCwtMT
+M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
+Njk5LC0xNDU5MzQwMDc0XX0=
 -->
