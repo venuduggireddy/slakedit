@@ -33,13 +33,8 @@ curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients/{{client_id}}/lif
 --header 'Authorization: SSWS {{OKTA_API_KEY}}' \
 --data-raw ''
  ```
- - [x] ~~Get client secret~~ 
- ```
- curl --location --request GET '{{KEYCLOAK_URL}}/auth/admin/realms/system-accounts/clients/{{UUID}}/client-secret' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{ACCESS_TOKEN}} \
---data-raw ''
- ```
+ - [x] ~~Get client secret~~  Okta does not provide this functionality
+
  - [x] Test client authorization using secret and client ID
  ```
 curl --location --request POST '{{OKTA_URL}}/oauth2/{{AUTH_SERVER}}/v1/token' \
@@ -190,6 +185,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMDIxNzgzMiwyMTI1MjgzODYyLDE5Nj
-cwMzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbLTEzODA0MzI5NzIsMjEyNTI4Mzg2MiwxOT
+Y3MDM1MjgsMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF19
 -->
