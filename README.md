@@ -77,7 +77,7 @@ UI ->> API Gateway: Approve System Account
 API Gateway->>CwsAppController: PUT /v1/applications/approve
 CwsAppController->> CWSAppService: approveApplication
 CWSAppService ->> Okta REST API: POST oauth2/v1/clients
-Note right of Okta REST API: Creates new client,<br/>generates secret<br/> and stores in <br/> keycloak database
+Note right of Okta REST API: Creates new client,<br/>generates, client_id, secret<br/> and stores in <br/> keycloak database
 Okta REST API -->> CWSAppService : Success 200 OK
 CWSAppService ->> CwsRepo: Update Status, Save the & Save to DB 
 CwsRepo -->> CWSAppService: CwsApplication
@@ -179,9 +179,9 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg1NjcyNzczLDE5ODIxNjE2MTksMTI0Nz
-E5NDE1LDEwMTM2ODc1OTgsLTM5NzA0NzI0MywtMTk0ODU3Njc1
-OSw3ODIwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMT
-M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
-Njk5LC0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbLTYwNTQ0NzA1MiwxOTgyMTYxNjE5LDEyND
+cxOTQxNSwxMDEzNjg3NTk4LC0zOTcwNDcyNDMsLTE5NDg1NzY3
+NTksNzgyMDgyNjM3LC0xNTQ2NDIzNDcwLDEyODY1NjA0NTQsLT
+EzODA0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3MDM1MjgsMTI5ODcy
+NDY5OSwtMTQ1OTM0MDA3NF19
 -->
