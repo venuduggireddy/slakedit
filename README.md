@@ -1,4 +1,4 @@
-## System Accounts migration to OKTA  
+## System Accounts migration to Okta 
 
 Objective is to migrate existing system accounts Okta IAM solution with *minimal*  impact to existing functionality. This migration is inline with future road map to utilize OAuth2 as authentication and authorization solution.  
 
@@ -179,10 +179,10 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI0NTgyMzQ5LC0xOTkzMjI5MjI2LDU3NT
-g4MzA3MSwxOTgyMTYxNjE5LDEyNDcxOTQxNSwxMDEzNjg3NTk4
-LC0zOTcwNDcyNDMsLTE5NDg1NzY3NTksNzgyMDgyNjM3LC0xNT
-Q2NDIzNDcwLDEyODY1NjA0NTQsLTEzODA0MzI5NzIsMjEyNTI4
-Mzg2MiwxOTY3MDM1MjgsMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF
-19
+eyJoaXN0b3J5IjpbMTQxMjEwMjAyNyw0MjQ1ODIzNDksLTE5OT
+MyMjkyMjYsNTc1ODgzMDcxLDE5ODIxNjE2MTksMTI0NzE5NDE1
+LDEwMTM2ODc1OTgsLTM5NzA0NzI0MywtMTk0ODU3Njc1OSw3OD
+IwODI2MzcsLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMTM4MDQz
+Mjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0Njk5LC
+0xNDU5MzQwMDc0XX0=
 -->
