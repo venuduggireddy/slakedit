@@ -137,7 +137,7 @@ SOAP ->> API Gateway: Authenticate client
 Note right of SOAP: HttpHeaders <br/>{"clientId": "ID",<br/> "secret":"SECRET"}
 API Gateway->>SFAController: POST sfa/auth
 SFAController ->> SystemAccountService: getSystemAccount
-SystemAccountService ->> Okta REST API: POST {realm}/token
+SystemAccountService ->> Okta REST API: POST outh2/{{default}}/v1/token
 Okta REST API-->> SystemAccountService: Success 200 {{AUTH}}
 Note right of SystemAccountService: Returns access_token<br/>and refresh tocken<br/> details back to API
 SystemAccountService ->> CwsRepo: findById(:id)
@@ -191,6 +191,6 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0MDY1NzIzMiwxOTY3MDM1MjgsMTI5OD
-cyNDY5OSwtMTQ1OTM0MDA3NF19
+eyJoaXN0b3J5IjpbLTE0NjEzNjAxNDcsMTk2NzAzNTI4LDEyOT
+g3MjQ2OTksLTE0NTkzNDAwNzRdfQ==
 -->
