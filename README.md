@@ -100,7 +100,8 @@ API Gateway -->> UI: Success {CwsApplication}
 <br/>
 
 #### Reset System Accounts client secret 
-Reset system account client_secret which
+Generates a new client secret for the specified client Application
+
 ```mermaid
 sequenceDiagram
 UI ->> API Gateway: Get client details
@@ -176,7 +177,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ3ODM0OTc5LDEyODY1NjA0NTQsLTEzOD
-A0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3MDM1MjgsMTI5ODcyNDY5
-OSwtMTQ1OTM0MDA3NF19
+eyJoaXN0b3J5IjpbLTE1NDY0MjM0NzAsMTI4NjU2MDQ1NCwtMT
+M4MDQzMjk3MiwyMTI1MjgzODYyLDE5NjcwMzUyOCwxMjk4NzI0
+Njk5LC0xNDU5MzQwMDc0XX0=
 -->
