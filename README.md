@@ -2,34 +2,38 @@
 
 Objective is to migrate existing system accounts Okta IAM solution with *minimal*  impact to existing functionality. This migration is inline with future road map to utilize OAuth2 as authentication and authorization solution.  
 
- - [x] Install and run keycloak on local environment. Keycloak can be installed as standalone or domain mode on Wildfly or JBOSS EAP servers. For POC we are using docker container with postgres for persistence	
- - [x] Create new realm **system accounts** . Realm can be generated multiple ways
-	 - Login to admin console and create a new realm system-accounts. For POC we opted this option
-	 - Import predefined JSON to create a new realm from the admin console
-	 - Use REST API to create new realm
- - [x] Create a new user to manage/administrator system-accounts realm. This user must have minimum role **create-client** to create new clients. 
+ - [x] Create a new developer account at [developer.okta.com](https://developer.okta.com/). After login Okta provides a pre-configured Custom Authorization Server with the name `default`
  
-	![#Note](https://placehold.it/15/f03c15/000000?text=+) *Note: Currently forgerock admin user password is rotated every 6 months to an year. Might as well have to set a similar policy for this user in keycloak and update the market place variables and restart the system-accounts application*
+ - [x] Create a API token and make a note of the token as it will be the only time that we will be able to view it.  This API token needs to be passed as an Authorization header for all Okta REST API calls
  
- - [x] Create new client with **Service Accounts Enabled** using REST API. This will auto generate a secret by default for the client  
+ - [x] Create new **service** client with `grant_type: client_credentials` and `token_endpoint_auth_method: client_secret_post`  using REST API. The response will have `client_id` and `client_secret`. The `client_secret` is shown only on the response of the creation and cannot to retrieved using the API
  ```
- curl --location --request POST '{{KEYCLOAK_URL}}/auth/admin/realms/system-accounts/clients' \
+curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients' \
+--header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{ACCESS_TOKEN}} \
---data-raw '{
-    "clientId": "sys-client-2",
-    "enabled": true,
-    "serviceAccountsEnabled": true
-}'
+--header 'Authorization: SSWS {{OKTA_API_KEY}}' \
+--data-raw '  {
+    "client_name": "batasam",
+    "redirect_uris": [],
+    "response_types": [
+      "token"
+    ],
+    "grant_types": [
+      "client_credentials"
+    ],
+    "token_endpoint_auth_method": "client_secret_post",
+    "application_type": "service"
+  }'
  ```
  - [x] Update/Reset client secret using REST API
  ```
- curl --location --request POST '{{KEYCLOAK_URL}}/auth/admin/realms/system-accounts/clients/{{UUID}}/client-secret' \
+curl --location --request POST '{{OKTA_URL}}/oauth2/v1/clients/{{client_id}}/lifecycle/newSecret' \
+--header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer {{ACCESS_TOKEN}} \
+--header 'Authorization: SSWS {{OKTA_API_KEY}}' \
 --data-raw ''
  ```
- - [x] Get client secret 
+ - [x] ~~Get client secret~~ 
  ```
  curl --location --request GET '{{KEYCLOAK_URL}}/auth/admin/realms/system-accounts/clients/{{UUID}}/client-secret' \
 --header 'Content-Type: application/json' \
@@ -38,23 +42,23 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
  ```
  - [x] Test client authorization using secret and client ID
  ```
- curl --location --request POST '{{KEYCLOAK_URL}}/auth/realms/system-accounts/protocol/openid-connect/token' \
+curl --location --request POST '{{OKTA_URL}}/oauth2/{{AUTH_SERVER}}/v1/token' \
+--header 'accept: application/json' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode '{{CLIENT_ID}}' \
---data-urlencode '{{CLIENT_SECRET}}' \
---data-urlencode 'grant_type=client_credentials'
+--data-urlencode 'grant_type=client_credentials' \
+--data-urlencode 'scope=Test' \
+--data-urlencode 'client_id={{CLIENT_ID}}' \
+--data-urlencode 'client_secret={{CLIENT_SECRET}}'
  ```
-- [x] Analyze changes needed for  System Accounts API to integrate with Keycloak. Refactor following java classes and update the application.properites  file with Keycloak server details
+- [x] Analyze changes needed for  System Accounts API to integrate with Okta. Refactor following java classes and update the application.properites  file with Okat Authorization server & Token details
 	 - SystemAccountRestController.java
 	 - SFAController.java
 	 - SystemAccountService.java
 	 - CwsAppService.java
- - [x] Database schema changes for System Accounts API:
 	
-	![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* When creating new clients keycloak generates a **uuid** along with the secret.  This **uuid** is used by keycloak REST API to get client details.  If we do not store the uuid in system accounts DB then we have few following options to retrieve client details by client_id
-	 1. *Preferred option* is to store the uuid in the system accounts DB when creating client
-	 2. Use keycloak Java Client instead of REST API to get the client details by client_id
-	 3. Get all clients using keycloak REST API and filter a client by client_id
+ - [x] Add new column `client_id` to table `cwsflow` to store the client_id generated by Okta during client creation
+
+![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* When creating new clients Okta generates a client_id **uuid** along with the secret.  This **uuid** is used by Okta REST API to get client details.  
 
  - [x] Analyze UI changes needed for calling updated System Accounts API. Refactor following *html* and *typescript* files based on new design
 	 - review.component.html
@@ -179,13 +183,13 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
  1. We are not migrating existing passwords from ForgeRock for POC or for the future implementation  
 
-2. We assume that we are not considering 90 day password expiration policy for the Keycloak POC implementation. If required, this will be accounted for in the actual implementation once Keycloak is approved.  
+2. We assume that we are not considering 90 day password expiration policy for this POC implementation. If required, this will be accounted for in the actual implementation once it is approved.  
 
-3. Currently on deactivate, we see that the request is sent to Forgerock to deactivate and the System Account DB is getting updated at the same time. We do not see requirements for Deactivate action for the POC. Our assumption is that this feature will not be part of the POC and will be accounted for in the actual implementation once Keycloak is approved.  
+3. Currently on deactivate, we see that the request is sent to Forgerock to deactivate and the System Account DB is getting updated at the same time. We do not see requirements for Deactivate action for the POC. Our assumption is that this feature will not be part of the POC and will be accounted for in the actual implementation once it is approved.  
 
-4. Based on the POC requirements, we assume that only SOAP services will need to change to pass a client secret in the Auth header by the clients. Working with client teams for them to make these changes on their side is not part of the scope of this POC. This will be accounted for in the actual implementation once Keycloak is approved.
+4. Based on the POC requirements, we assume that only SOAP services need to change to pass a client secret. Working with client teams for them to make these changes on their side is not part of the scope of this POC. This will be accounted for in the actual implementation once it is approved.
 
-5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once Keycloak is approved.
+5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzAzODc1Njc3XX0=
+eyJoaXN0b3J5IjpbLTE0NTkzNDAwNzRdfQ==
 -->
