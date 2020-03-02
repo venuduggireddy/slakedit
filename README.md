@@ -60,11 +60,8 @@ Objective is to migrate existing system accounts Okta IAM solution with *minimal
 	![#Note](https://placehold.it/15/f03c15/000000?text=+)  *Note:* When creating new clients Okta generates a client_id **uuid** along with the secret.  This **uuid** is used by Okta REST API to do any client CRUD actions  
 
  - [x] Analyze UI changes needed for calling updated System Accounts API. Refactor following *html* and *typescript* files based on new design
-	 - review.component.html
-	 - review.component.ts
+	 - review.component.html & .ts
 	 - system-accounts-service.ts
-<br/>
-
 
 ### UML diagrams
 
@@ -176,7 +173,7 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzkzMDY3NzgsLTE1NDY0MjM0NzAsMT
-I4NjU2MDQ1NCwtMTM4MDQzMjk3MiwyMTI1MjgzODYyLDE5Njcw
-MzUyOCwxMjk4NzI0Njk5LC0xNDU5MzQwMDc0XX0=
+eyJoaXN0b3J5IjpbNzgyMDgyNjM3LC0xNTQ2NDIzNDcwLDEyOD
+Y1NjA0NTQsLTEzODA0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3MDM1
+MjgsMTI5ODcyNDY5OSwtMTQ1OTM0MDA3NF19
 -->
