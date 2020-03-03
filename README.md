@@ -1,6 +1,6 @@
 ## System Accounts migration to Okta 
 
-Objective is to migrate existing system accounts Okta IAM solution with *minimal*  impact to existing functionality. This migration is inline with future road map to utilize OAuth2 as authentication and authorization solution.  
+Objective is to migrate existing system accounts to Okta IAM solution with *minimal*  impact to existing functionality. This migration is inline with future road map to utilize OAuth2 as authentication and authorization solution.  
 
  - [x] Create a new developer account at [developer.okta.com](https://developer.okta.com/). After login Okta provides a pre-configured custom Authorization Server with the name `default`
  
@@ -180,11 +180,11 @@ Below are some questions that were answered by **Ruchir Mehta** and team
 
 5. Based on POC requirements, we will identify changes needed in the U/I for set password, forgot password and reset password. However, the actual implementation will be accounted for once it is approved.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1ODIyMjkwNywtMTQ3NzkzNDE0MSw1OD
-c2Mzk5MDQsLTE3MzI2NzA1NSwxNDEyMTAyMDI3LDQyNDU4MjM0
-OSwtMTk5MzIyOTIyNiw1NzU4ODMwNzEsMTk4MjE2MTYxOSwxMj
-Q3MTk0MTUsMTAxMzY4NzU5OCwtMzk3MDQ3MjQzLC0xOTQ4NTc2
-NzU5LDc4MjA4MjYzNywtMTU0NjQyMzQ3MCwxMjg2NTYwNDU0LC
-0xMzgwNDMyOTcyLDIxMjUyODM4NjIsMTk2NzAzNTI4LDEyOTg3
-MjQ2OTldfQ==
+eyJoaXN0b3J5IjpbLTQ4ODEzNzQ1MCwxMzU4MjIyOTA3LC0xND
+c3OTM0MTQxLDU4NzYzOTkwNCwtMTczMjY3MDU1LDE0MTIxMDIw
+MjcsNDI0NTgyMzQ5LC0xOTkzMjI5MjI2LDU3NTg4MzA3MSwxOT
+gyMTYxNjE5LDEyNDcxOTQxNSwxMDEzNjg3NTk4LC0zOTcwNDcy
+NDMsLTE5NDg1NzY3NTksNzgyMDgyNjM3LC0xNTQ2NDIzNDcwLD
+EyODY1NjA0NTQsLTEzODA0MzI5NzIsMjEyNTI4Mzg2MiwxOTY3
+MDM1MjhdfQ==
 -->
